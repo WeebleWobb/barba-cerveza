@@ -1,0 +1,28 @@
+// ===================================================================
+//	Mixins 
+// ===================================================================
+
+// Media Query
+@mixin media($break) {
+	@if $break == 'sm' {
+		@media (min-width: $break-sm) {
+			@content;
+		}
+	} @else if $break == 'md' {
+		@media (min-width: $break-md) {
+			@content;
+		}
+	} @else if $break == 'lg' {
+		@media (min-width: $break-lg) {
+			@content;
+		}
+	} @else if $break == 'xl' {
+		@media (min-width: $break-xl) {
+			@content;
+		}
+	} @else if $break == 'xxl' {
+		@media (min-width: $break-xxl) {
+			@content;
+		}
+	}
+}
