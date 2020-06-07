@@ -41,9 +41,9 @@ exports.images = images;
 
 // HTML processing
 function html() {
-  const out = build + 'html/';
+  const out = build;
 
-  return gulp.src(src + 'html/**/*')
+  return gulp.src(src)
     .pipe(newer(out))
     .pipe(devBuild ? noop() : htmlclean())
     .pipe(gulp.dest(out));
@@ -68,7 +68,7 @@ exports.js = js;
 // CSS processing
 function css() {
 
-  return gulp.src(src + 'scss/main.scss')
+  return gulp.src(src + 'scss/style.scss')
     .pipe(sourcemaps ? sourcemaps.init() : noop())
     .pipe(sass({
       outputStyle: 'nested',
@@ -83,7 +83,7 @@ function css() {
       cssnano
     ]))
     .pipe(sourcemaps ? sourcemaps.write() : noop())
-    .pipe(gulp.dest(build + 'css/'));
+    .pipe(gulp.dest(src + 'css/'));
 
 }
 exports.css = gulp.series(images, css);
@@ -98,7 +98,7 @@ function watch(done) {
   gulp.watch(src + 'images/**/*', images);
 
   // html changes
-  gulp.watch(src + 'html/**/*', html);
+  gulp.watch(src, html);
 
   // css changes
   gulp.watch(src + 'scss/**/*', css);
