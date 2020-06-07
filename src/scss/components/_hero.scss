@@ -1,0 +1,21 @@
+.hero {
+  margin: 24px 0;
+
+  &__content h3 {
+    font-style: italic;
+  }
+
+  &__content h1 {
+    margin-bottom: 1rem;
+  }
+
+  .powered {
+    margin-left: .5rem;
+    
+      & img {
+        width: 100%;
+        max-width: 128px;
+      }
+    
+  }
+}
