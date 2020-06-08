@@ -1,6 +1,25 @@
 .hero {
   margin: 24px 0;
 
+  div.row {
+    display: flex;
+    justify-content: space-between;
+
+    .columns {
+      display: flex;
+
+      &:last-child {
+        margin-left: auto;
+      }
+  
+      & > div {
+        align-self: center;
+      }
+    } 
+
+  }
+  
+
   &__content h3 {
     font-style: italic;
   }
