@@ -4,14 +4,14 @@
 	'base/mixins',
 	'base/globals',
 	'base/grid',
-	'base/spacing',
 	'base/utilities';
 
 // Component styles
 @import 'components/main-header',
 	'components/buttons-link',
 	'components/hero',
-	'components/checkin';
+	'components/checkin',
+	'components/profile';
 
 // Page specific styles
 @import 'layouts/base',
