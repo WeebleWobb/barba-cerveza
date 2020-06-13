@@ -9,16 +9,9 @@ body {
   font-size: 1rem;
   line-height: 1.6;
   font-weight: 400;
-  font-family: "Roboto", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #2C2D48; 
+  font-family: $body-font;
+  color: $primary-color; 
   background-color: #F8EFE7;
-}
-
-hr {
-  margin-top: 3rem;
-  margin-bottom: 3.5rem;
-  border-width: 0;
-  border-top: 1px solid #E1E1E1; 
 }
 
 main {

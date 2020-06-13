@@ -1,8 +1,8 @@
 .checkin {
   background-color: #ffffff;
-  border: solid 3px #2C2D48;
+  border: $border-style;
   box-sizing: border-box;
-  border-radius: .5rem;
+  border-radius: $radius;
   box-shadow: 0 0 1rem #DED3C9;
   width: 100%;
   max-width: 384px;
@@ -13,7 +13,7 @@
     flex-direction: row;
 
     img {
-      border-radius: .5rem;
+      border-radius: $radius;
       margin-right: 1rem;
     }
 
@@ -34,11 +34,11 @@
     display: flex;
     flex-direction: row;
     font-size: .75rem;
-    border-top: 3px solid #2C2D48;
+    border-top: $border-style;
 
     div {
       padding: .5rem;
-      border-right: 3px solid #2C2D48;
+      border-right: $border-style;
       flex: 2 1 auto;
       display: flex;
       justify-content: center;

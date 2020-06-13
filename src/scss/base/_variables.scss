@@ -5,6 +5,13 @@
 $primary-color: #2C2D48;
 $secondary-color: #FFC000;
 
+// Component styling
+$border-style: solid 3px #2C2D48;
+$radius: .5rem;
+
+// Typeface
+$header-font: 'Playfair Display', 'Times New Roman', Times, serif;
+$body-font: "Roboto", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 // Media Query Breaks Points
 $break-sm: 576px;
