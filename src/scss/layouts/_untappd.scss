@@ -1,0 +1,10 @@
+.untappd {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+
+  & .checkin {
+    margin-bottom: 2rem;
+  }
+}
