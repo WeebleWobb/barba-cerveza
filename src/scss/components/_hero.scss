@@ -1,32 +1,24 @@
 .hero {
   margin-bottom: 48px;
   overflow: hidden;
-  
-  div.row {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
+  &__content {
+    width: 100%;
+    max-width: 624px;
+    align-self: center;
 
-    .columns {
-      display: flex;
+   & h3 {
+      font-style: italic;
+    }
 
-      &:last-child {
-        margin-left: auto;
-      }
-  
-      & > div {
-        align-self: center;
-      }
-    } 
+    & h1 {
+      margin-bottom: 1rem;
+    }
+  }   
 
-  }
-  
-
-  &__content h3 {
-    font-style: italic;
-  }
-
-  &__content h1 {
-    margin-bottom: 1rem;
+  .latest {
+    float: right;
   }
 
   .powered {
