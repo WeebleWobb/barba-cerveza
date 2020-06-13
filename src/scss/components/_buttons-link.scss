@@ -1,9 +1,11 @@
 /* Links
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 a {
-  color: #2C2D48; }
+  color: $primary-color; 
+}
 a:hover {
-  color: #FFC000; }
+  color: $secondary-color; 
+}
 
 
 /* Buttons
@@ -13,13 +15,13 @@ button,
 input[type="submit"],
 input[type="reset"],
 input[type="button"] {
+  border: none;
   display: inline-block;
   padding: 1rem;
   color: #2C2D48;
   text-align: center;
   font-size: 1.125rem;
   font-weight: 700;
-  line-height: 38px;
   text-decoration: none;
   white-space: nowrap;
   border-radius: 8px;
@@ -27,34 +29,44 @@ input[type="button"] {
   box-sizing: border-box;
 
   &:hover {
-    color: #2C2D48;
+    color: $primary-color;
     outline: 0;
-    border-color: #2C2D48;
     border-width: 2px;
   }
 
   &:focus {
     color: #ffffff;
+    background-color: $secondary-color;
     outline: 0;
-    border-color: #2C2D48;
+    border-color: $primary-color;
     border-width: 2px;
   }
 
   &.button-primary {
     color: #FFF;
-    background-color: #2C2D48;
+    background-color: $primary-color;
+
+    &:active {
+      background-color: darken($secondary-color, 5%);
+    }
 
     &:hover {
       color: #FFF;
-      background-color: #FFC000;
+      background-color: $secondary-color;
     }
 
     &:focus {
       color: #FFF;
-      background-color: #FFC000;
-      border-color: #2C2D48;
+      background-color: $secondary-color;
+      border-color: $primary-color;
       border-width: 2px;
     }
+  }
+
+  & .icon {
+    margin-bottom: -1px;
+    margin-right: .25rem;
+    fill: #fff;
   }
 
 }
