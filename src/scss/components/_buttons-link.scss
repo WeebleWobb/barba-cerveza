@@ -31,7 +31,7 @@ input[type="button"] {
   &:hover {
     color: $primary-color;
     outline: 0;
-    border-width: 2px;
+    border-width: .125rem;
   }
 
   &:focus {
@@ -39,7 +39,7 @@ input[type="button"] {
     background-color: $secondary-color;
     outline: 0;
     border-color: $primary-color;
-    border-width: 2px;
+    border-width: .125rem;
   }
 
   &.button-primary {
@@ -59,12 +59,12 @@ input[type="button"] {
       color: #FFF;
       background-color: $secondary-color;
       border-color: $primary-color;
-      border-width: 2px;
+      border-width: .125rem;
     }
   }
 
   & .icon {
-    margin-bottom: -1px;
+    margin-bottom: -.0625rem;
     margin-right: .25rem;
     fill: #fff;
   }
