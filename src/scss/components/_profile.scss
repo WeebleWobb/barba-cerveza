@@ -1,14 +1,17 @@
 .profile {
-  margin-bottom: 40px;
+  margin-bottom: 2.5rem;
   display: flex;
   flex-direction: row;
   background-color: #ffffff;
   border: $border-style;
   border-radius: $radius;
+  box-sizing: border-box;
 
   &__info {
     display: flex;
     flex-direction: row;
+    flex: 1 1 318px;
+    box-sizing: border-box;
     border-right: $border-style;
 
     & > div {
@@ -24,6 +27,8 @@
  &__stats, &__social {
     padding: 0 1rem;
     display: flex;
+    justify-content: center;
+    box-sizing: border-box;
 
     ul {
       list-style: none;
@@ -37,7 +42,8 @@
   }
 
   &__stats {
-    border-right: 3px solid #2C2D48;
+    border-right: $border-style;
+    flex: 2 1 512px;
 
     li {
       padding: 0 1.65rem;
@@ -55,8 +61,13 @@
     }
   }
 
-  &__social li {
-    padding: 0 1.125rem;
+  &__social {
+    flex: 1 1 381px;
+
+    li { 
+      padding: 0 1.125rem;
+    }
+
   }
 
 }
