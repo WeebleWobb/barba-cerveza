@@ -5,7 +5,21 @@
   
   & .container {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+
+    @include media('sm') {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+  }
+
+  .logo {
+    align-self: center;
+
+    @include media('sm') {
+      align-self: flex-start;
+    }
   }
 
   .nav {
@@ -15,15 +29,26 @@
       list-style: none;
       font-size: 1.125rem;
       font-weight: 700;
-      margin: 0;
+      margin-top: 1rem;
+      padding-top: .75rem;
+      border-top: $border-style;
+      overflow: hidden;
+
+      @include media('sm') {
+        margin: 0;
+        padding: 0;
+        border-top: none;
+      }
     }
 
     &__link {
       float: left;
       margin: 0 .5rem;
 
-      &:last-child {
-        margin-right: 0;
+      @include media('sm') {
+        &:last-child {
+          margin-right: 0;
+        }
       }
 
       a {

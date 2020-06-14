@@ -1,7 +1,12 @@
 /* Base Styles
-–––––––––––––––––––––––––––––––––––––––––––––––––– */≈
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
 html {
-  font-size: 16px; 
+  font-size: 14px;
+  
+  @include media('md') {
+    font-size: 16px; 
+  }
+
 }
 
 body {
@@ -20,7 +25,8 @@ main {
 .container {
   position: relative;
   width: 100%;
-  max-width: 1216px;
+  padding: 0 1rem;
+  max-width: 1248px;
   margin-left: auto;
   margin-right: auto;
   box-sizing: border-box; 

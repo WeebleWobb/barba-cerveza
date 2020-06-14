@@ -2,11 +2,23 @@
   margin-bottom: 3rem;
   overflow: hidden;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+
+  @include media('xl') { 
+    justify-content: space-between;
+  }
+
   &__content {
     width: 100%;
-    max-width: 624px;
+    text-align: center;
     align-self: center;
+    max-width: 768px;
+    
+    @include media('xl') { 
+      text-align: left;
+      max-width: 624px;
+    }
+    
 
    & h3 {
       font-style: italic;
@@ -18,8 +30,13 @@
   }   
 
   .latest {
-    float: right;
+    display: none;
+
+    @include media('xl') {
+      display: block;
+    }
   }
+  
 
   .powered {
     margin-left: .5rem;
