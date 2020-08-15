@@ -1,7 +1,5 @@
 // Gulp.js configuration
 
-const
-
 // development mode?
 devBuild = (process.env.NODE_ENV !== 'production'),
 
@@ -41,12 +39,11 @@ exports.images = images;
 
 // HTML processing
 function html() {
-  const out = build;
 
-  return gulp.src(src)
-    .pipe(newer(out))
+  return gulp.src(src + '*.html')
+    .pipe(newer(build))
     .pipe(devBuild ? noop() : htmlclean())
-    .pipe(gulp.dest(out));
+    .pipe(gulp.dest(build));
 };
 exports.html = gulp.series(images, html);
 
@@ -58,7 +55,7 @@ function js() {
     .pipe(deporder())
     .pipe(concat('main.js'))
     .pipe(stripdebug ? stripdebug() : noop())
-    .pipe(terser())
+    // .pipe(terser())
     .pipe(sourcemaps ? sourcemaps.write() : noop())
     .pipe(gulp.dest(build + 'js/'));
 
@@ -83,7 +80,7 @@ function css() {
       cssnano
     ]))
     .pipe(sourcemaps ? sourcemaps.write() : noop())
-    .pipe(gulp.dest(src + 'css/'));
+    .pipe(gulp.dest(src + 'css/' && build + 'css/'));
 
 }
 exports.css = gulp.series(images, css);
