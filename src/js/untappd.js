@@ -16,18 +16,22 @@ fetch(url)
       
       console.log(data);
 
-
       // Selects where checkins will live
       const checkin_container = document.getElementById('js-checkin-container');
-      
+            
       // Cunstruct checkin card
       const checkin = document.createElement('div');
       checkin.setAttribute('class', 'checkin');
+
+      checkin_container.appendChild(checkin);
 
       // Construct checkin__header
       const checkin_header = document.createElement('header');
       checkin_header.setAttribute('class', 'checkin__header');
 
+      checkin.appendChild(checkin_header);
+
+        // Checkin Image
         const checkin_img = document.createElement('img');
 
         if(typeof checkins.media.items[0] !== "undefined" ) {
@@ -35,7 +39,10 @@ fetch(url)
         } else {
           checkin_img.src = 'https://placehold.it/100x100'
         }
+        
+        checkin_header.appendChild(checkin_img);
 
+        // Checking Beer Info
         const beer_info = document.createElement('div');
         beer_info.setAttribute('id', 'js-beer-info');
 
@@ -48,36 +55,50 @@ fetch(url)
           const beer_style = document.createElement('h6');
           beer_style.textContent = checkins.beer.beer_style;
 
+        checkin_header.appendChild(beer_info);
+        beer_info.appendChild(beer_name);
+        beer_info.appendChild(brewery_name);
+        beer_info.appendChild(beer_style);
+
       // Construct checkin__body
       const checkin_body = document.createElement('div');
       checkin_body.setAttribute('class', 'checkin__body');
 
         const description = document.createElement('p');
         description.textContent = checkins.checkin_comment;
+      
+      checkin.appendChild(checkin_body);
+      checkin_body.appendChild(description);
 
       // Construct checkin__footer
       const checkin_footer = document.createElement('footer');
       checkin_footer.setAttribute('class', 'checkin__footer');
+      
+      checkin.appendChild(checkin_footer);
 
         const abv = document.createElement('div');
-        abv.setAttribute('id', 'js-rating');
+        abv.setAttribute('id', 'js-abv');
         abv.textContent = 'ABV: ' + checkins.beer.beer_abv + '%';
+
+        checkin_footer.appendChild(abv);
 
         // Setting up rating star
         const rating_container = document.createElement('div');
-        rating_container.setAttribute('id', 'js-rating');
+        const checkin_id = checkins.checkin_id;
+        rating_container.setAttribute('class', `rating  js-${checkin_id}`);
 
-        const rating_list = document.createElement('ul');
-        rating_list.setAttribute('class', 'rating');
-
+        const rating_inner = document.createElement('div');
+        rating_inner.setAttribute('class', 'rating__inner');
+        
           const rating = checkins.rating_score;
           const rating_total = 5;
 
-          console.log(rating);
-
           const rating_percentage = (rating / rating_total) * 100;
 
-          console.log(rating_percentage);
+          checkin_footer.appendChild(rating_container);
+          rating_container.appendChild(rating_inner);
+
+          document.querySelector(`.js-${checkin_id} .rating__inner`).style.width = `${rating_percentage}%`;
         
         // Setting up checkin date
         const checkin_date = document.createElement('div');
@@ -87,23 +108,10 @@ fetch(url)
         let formatted_date = `Checked in: ${date.toLocaleDateString('en-US', options)}`;
         checkin_date.textContent = formatted_date;
 
+        checkin_footer.appendChild(checkin_date);
+
+
       // Putting it all together
-      checkin_container.appendChild(checkin);
-
-      checkin.appendChild(checkin_header);
-      checkin_header.appendChild(checkin_img);
-      checkin_header.appendChild(beer_info);
-      beer_info.appendChild(beer_name);
-      beer_info.appendChild(brewery_name);
-      beer_info.appendChild(beer_style);
-
-      checkin.appendChild(checkin_body);
-      checkin_body.appendChild(description);
-
-      checkin.appendChild(checkin_footer);
-      checkin_footer.appendChild(abv);
-      checkin_footer.appendChild(rating_list);
-      checkin_footer.appendChild(checkin_date);
 
     });
 
