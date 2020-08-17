@@ -77,7 +77,7 @@ fetch(url)
       checkin.appendChild(checkin_footer);
 
         const abv = document.createElement('div');
-        abv.setAttribute('id', 'js-abv');
+        abv.setAttribute('class', 'abv');
         abv.textContent = 'ABV: ' + checkins.beer.beer_abv + '%';
 
         checkin_footer.appendChild(abv);
@@ -102,7 +102,7 @@ fetch(url)
         
         // Setting up checkin date
         const checkin_date = document.createElement('div');
-        checkin_date.setAttribute('id', 'js-checkin-date');
+        checkin_date.setAttribute('class', 'checkin-date');
         const date = new Date(checkins.created_at);
         const options = { month: 'short', day: 'numeric', year: 'numeric'}
         let formatted_date = `Checked in: ${date.toLocaleDateString('en-US', options)}`;

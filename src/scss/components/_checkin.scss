@@ -1,4 +1,6 @@
 .checkin {
+  display: flex;
+  flex-direction: column;
   background-color: #ffffff;
   border: $border-style;
   box-sizing: border-box;
@@ -26,6 +28,7 @@
 
   &__body {
     padding: .5rem 1rem 2rem;
+    flex-basis: 100%;
 
     p {
       margin: 0;
@@ -37,32 +40,39 @@
     flex-direction: row;
     font-size: .75rem;
     border-top: $border-style;
+    bottom: 0;
 
-    div {
-      padding: .5rem;
+    .abv {
+      margin-right: 1rem;
+      padding: .5rem 1rem;
       border-right: $border-style;
-      flex: 2 1 auto;
-      display: flex;
-      justify-content: center;
+    }
 
-      &:last-child {
-        border-right: none;
-      }
+    .checkin-date {
+      margin-left: 1rem;
+      padding: .5rem 1.125rem;
+      border-left: $border-style;
     }
 
     .rating {
-      list-style: none;
-      margin: 0;
-      padding: 0;
+      display: flex;
+      align-items: center;
+      position: relative;
 
-      li {
-        float: left;
-        margin-right: .5rem;
-        margin-top: .125rem;
+      &::before {
+        content: url(../assets/rating/empty.svg) "\00a0\00a0" url(../assets/rating/empty.svg) "\00a0\00a0" url(../assets/rating/empty.svg) "\00a0\00a0" url(../assets/rating/empty.svg) "\00a0\00a0" url(../assets/rating/empty.svg);
+      }
 
-        &:last-child {
-          margin-right: 0;
-        }
+      &__inner {
+        position: absolute;
+        white-space: nowrap;
+        overflow: hidden;
+        width: 0;
+        left: 0;
+          
+          &::before {
+            content: url(../assets/rating/filled.svg) "\00a0\00a0" url(../assets/rating/filled.svg) "\00a0\00a0" url(../assets/rating/filled.svg) "\00a0\00a0" url(../assets/rating/filled.svg) "\00a0\00a0" url(../assets/rating/filled.svg);
+          }
       }
     }
   }
